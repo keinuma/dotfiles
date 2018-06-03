@@ -1,0 +1,104 @@
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Konfekt/FastFold'
+on_source = ['neocomplete.vim', 'deoplete.nvim']
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+on_source = ['neocomplete.vim', 'deoplete.nvim']
+
+# ==========================================================
+# block search and precious
+# ==========================================================
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-function'
+
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim', 'vim-textobj-user']
+on_ft = ['vim', 'toml', 'markdown']
+
+
+
+
+[[plugins]]
+repo = 'osyo-manga/vim-operator-search'
+depends = ['vim-operator-user', 'vim-textobj-function', 'vim-textobj-user']
+hook_add = '''
+nmap <Space>/ <Plug>(operator-search)if
+'''
+on_ft = ['c', 'cpp']
+
+
+# ==========================================================
+# Text syntax
+# ==========================================================
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'rhysd/vim-gfm-syntax'
+on_ft = ['markdown', 'md', 'mkd']
+
+[[plugins]]
+repo = "plasticboy/vim-markdown"
+on_ft = ["markdown", 'md', 'mkd']
+
+
+[[plugins]]
+repo = 'fszymanski/deoplete-emoji'
+depends = 'deoplete.nvim'
+on_ft = ['markdown']
+
+
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+on_ft = ['c', 'cpp']
+
+
+# ==========================================================
+# Util
+# ==========================================================
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+depends = ['vimproc.vim']
+on_ft = ['python', 'go']
+hook_source = '''
+  source ~/.config/nvim/plugins/vimquickrun.rc.vim
+'''
+[[plugins]]
+repo = 'w0rp/ale'
+on_ft = ['go', 'python', 'javascript', 'html', 'css', 'markdown', 'make', 'vim']
+hook_source = '''
+    source ~/.config/nvim/plugins/ale.rc.vim
+'''
+
+[[plugins]]
+repo = 'janko-m/vim-test'
+depends = ['vim-dispatch']
+hook_source = '''
+    let g:test#strategy = 'dispatch'
+'''
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
